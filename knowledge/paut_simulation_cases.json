@@ -1,0 +1,802 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-08-22T14:25:48.307165+00:00",
+  "scope": "COMSOL仿真16发16收A扫/FMC典型缺陷真值案例",
+  "selection": {
+    "purpose": "只向Agent提供少量典型原型用于相似性解释，全量数据由独立验证流程管理。",
+    "discovered_case_counts": {
+      "crack": 9,
+      "pore": 7,
+      "lack_of_fusion": 12,
+      "inclusion": 15
+    },
+    "selected_case_counts": {
+      "crack": 3,
+      "pore": 3,
+      "lack_of_fusion": 4,
+      "inclusion": 3
+    },
+    "policy": [
+      "裂纹：短单裂纹、长单裂纹和多裂纹各一例。",
+      "气孔：按平均孔径选取小、中、大孔群各一例。",
+      "未熔合：坡口、根部、层间各一例，并增加较长坡口未熔合作尺寸变化参考。",
+      "夹渣：按深度选取浅层小尺寸、中层中等尺寸和深层大尺寸各一例。"
+    ]
+  },
+  "sources": [
+    "团队提供的COMSOL仿真文本数据",
+    "目录名编码的裂纹线段端点或气孔中心与直径",
+    "未熔合数据集README与case命名中的类型、中心、长度和角度",
+    "夹渣COMSOL文件头中的长度、厚度、位置、深度和角度",
+    "项目已有Python-DAS真值验证结果（如存在）"
+  ],
+  "limitations": [
+    "文件名真值只适用于仿真验证，不适用于未知真实设备数据。",
+    "A扫单帧不能独立确定缺陷真实类型、长度、宽度或空间走向。",
+    "案例相似度不是验收等级，也不能替代校准、标准和工程完整性评定。"
+  ],
+  "cases": [
+    {
+      "case_id": "comsol_crack_005",
+      "dataset_name": "(0.035,0.025)-(0.045,0.02)",
+      "defect_family": "crack",
+      "truth_geometry": {
+        "segments_mm": [
+          [
+            [
+              35.0,
+              25.0
+            ],
+            [
+              45.0,
+              20.0
+            ]
+          ]
+        ],
+        "lengths_mm": [
+          11.18034
+        ],
+        "orientations_deg": [
+          -26.565051
+        ],
+        "centers_mm": [],
+        "diameters_mm": []
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 256,
+        "sample_count": 601,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL分通道文本：时间、单通道幅值",
+        "header_excerpt": [
+          "Model:              PAUT_16.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 8 2026, 21:43",
+          "Dimension:          1",
+          "Nodes:              601"
+        ],
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本"
+      },
+      "validation": {
+        "status": "success",
+        "shape": [
+          16,
+          16,
+          601
+        ],
+        "sample_rate_hz": 50000000.0,
+        "target_metrics": {
+          "target_label": "线段",
+          "distance_to_target_region_mm": 6.619,
+          "distance_to_target_center_mm": 6.619,
+          "nearest_target_x_mm": 39.96,
+          "nearest_target_z_mm": 22.52
+        },
+        "target_neighborhood_response": {
+          "available": true,
+          "x_mm": 40.8,
+          "z_mm": 18.8,
+          "relative_db": -5.297,
+          "distance_to_target_region_mm": 2.952,
+          "neighborhood_mm": 3.0
+        },
+        "matlab_comparison": {
+          "available": false,
+          "reason": "未提供MATLAB .mat输出文件"
+        },
+        "warnings": [
+          "采样窗的单通道脉冲回波最大表观深度约35.40 mm，未覆盖40 mm板厚预计底波。"
+        ],
+        "boundary": "验证结果只说明当前算法与COMSOL文件名真值的接近程度，不代表真实工件定性或验收。"
+      },
+      "evidence_level": "仿真真值案例",
+      "use_boundary": "仅用于算法验证和相似性解释，不作为真实工件的缺陷类型、风险或验收阈值。"
+    },
+    {
+      "case_id": "comsol_crack_003",
+      "dataset_name": "(0.031,0.028)-(0.049,0.018)",
+      "defect_family": "crack",
+      "truth_geometry": {
+        "segments_mm": [
+          [
+            [
+              31.0,
+              28.0
+            ],
+            [
+              49.0,
+              18.0
+            ]
+          ]
+        ],
+        "lengths_mm": [
+          20.59126
+        ],
+        "orientations_deg": [
+          -29.054604
+        ],
+        "centers_mm": [],
+        "diameters_mm": []
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 16,
+        "sample_count": 601,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL文本导出：位置、时间、接收通道幅值",
+        "header_excerpt": [
+          "Model:              PAUT_16（4）.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 13 2026, 18:26",
+          "Table:              表格 1 - 点计算 1",
+          "tx_pos (m)             Time (s)                 总声压 (Pa), 点: 7           总声压 (Pa), 点: 8           总声压 (Pa), 点: 9           总声压 (Pa), 点: 10          总声压 (Pa), 点: 11          总声压 (Pa), 点: 13          总声压 (Pa), 点: 14          总声压 (Pa), 点: 15          总声压 (Pa), 点: 17          总声压 (Pa), 点: 18          总声"
+        ],
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本"
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前DAS真值验证清单。"
+      },
+      "evidence_level": "仿真真值案例",
+      "use_boundary": "仅用于算法验证和相似性解释，不作为真实工件的缺陷类型、风险或验收阈值。"
+    },
+    {
+      "case_id": "comsol_crack_007",
+      "dataset_name": "(0.06,0.0206)-(0.06,0.02),(0.0354,0.026)-(0.048,0.018)",
+      "defect_family": "crack",
+      "truth_geometry": {
+        "segments_mm": [
+          [
+            [
+              60.0,
+              20.6
+            ],
+            [
+              60.0,
+              20.0
+            ]
+          ],
+          [
+            [
+              35.4,
+              26.0
+            ],
+            [
+              48.0,
+              18.0
+            ]
+          ]
+        ],
+        "lengths_mm": [
+          0.6,
+          14.925147
+        ],
+        "orientations_deg": [
+          -90.0,
+          -32.412307
+        ],
+        "centers_mm": [],
+        "diameters_mm": []
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 16,
+        "sample_count": 601,
+        "receiver_count": 48,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL文本导出：位置、时间、接收通道幅值",
+        "header_excerpt": [
+          "Model:              PAUT_16（7）.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 14 2026, 15:33",
+          "Table:              表格 1 - 点计算 1",
+          "tx_pos (m)             Time (s)                 总声压 (Pa), 点: 7           总声压 (Pa), 点: 8           总声压 (Pa), 点: 9           总声压 (Pa), 点: 10          总声压 (Pa), 点: 11          总声压 (Pa), 点: 12          总声压 (Pa), 点: 13          总声压 (Pa), 点: 15          总声压 (Pa), 点: 17          总声压 (Pa), 点: 18          总声"
+        ],
+        "fmc_shape": [
+          16,
+          48,
+          601
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本"
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前DAS真值验证清单。"
+      },
+      "evidence_level": "仿真真值案例",
+      "use_boundary": "仅用于算法验证和相似性解释，不作为真实工件的缺陷类型、风险或验收阈值。"
+    },
+    {
+      "case_id": "comsol_pore_001",
+      "dataset_name": "d0.5mm(0.06,0.02)d1mm(0.055,0.022)d0.6mm(0.054,0.016)",
+      "defect_family": "pore",
+      "truth_geometry": {
+        "segments_mm": [],
+        "lengths_mm": [],
+        "orientations_deg": [],
+        "centers_mm": [
+          [
+            60.0,
+            20.0
+          ],
+          [
+            55.0,
+            22.0
+          ],
+          [
+            54.0,
+            16.0
+          ]
+        ],
+        "diameters_mm": [
+          0.5,
+          1.0,
+          0.6
+        ]
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 16,
+        "sample_count": 751,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL文本导出：位置、时间、接收通道幅值",
+        "header_excerpt": [
+          "Model:              PAUT_16（9）.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 14 2026, 22:37",
+          "Table:              表格 1 - 点计算 1",
+          "tx_pos (m)             Time (s)                 总声压 (Pa), 点: 7           总声压 (Pa), 点: 8           总声压 (Pa), 点: 9           总声压 (Pa), 点: 10          总声压 (Pa), 点: 11          总声压 (Pa), 点: 12          总声压 (Pa), 点: 13          总声压 (Pa), 点: 14          总声压 (Pa), 点: 31          总声压 (Pa), 点: 32          总声"
+        ],
+        "fmc_shape": [
+          16,
+          16,
+          751
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本"
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前DAS真值验证清单。"
+      },
+      "evidence_level": "仿真真值案例",
+      "use_boundary": "仅用于算法验证和相似性解释，不作为真实工件的缺陷类型、风险或验收阈值。"
+    },
+    {
+      "case_id": "comsol_pore_003",
+      "dataset_name": "d1.2mm(0.06,0.02)d0.8mm(0.055,0.022)d0.5mm(0.054,0.016)d2.4mm(0.045,0.027)d1.6mm(0.04,0.017)d1.6mm(0.037,0.025)",
+      "defect_family": "pore",
+      "truth_geometry": {
+        "segments_mm": [],
+        "lengths_mm": [],
+        "orientations_deg": [],
+        "centers_mm": [
+          [
+            60.0,
+            20.0
+          ],
+          [
+            55.0,
+            22.0
+          ],
+          [
+            54.0,
+            16.0
+          ],
+          [
+            45.0,
+            27.0
+          ],
+          [
+            40.0,
+            17.0
+          ],
+          [
+            37.0,
+            25.0
+          ]
+        ],
+        "diameters_mm": [
+          1.2,
+          0.8,
+          0.5,
+          2.4,
+          1.6,
+          1.6
+        ]
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 16,
+        "sample_count": 751,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL文本导出：位置、时间、接收通道幅值",
+        "header_excerpt": [
+          "Model:              PAUT_16（9）.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 15 2026, 22:41",
+          "Table:              表格 1 - 点计算 1",
+          "tx_pos (m)             Time (s)                 总声压 (Pa), 点: 7           总声压 (Pa), 点: 8           总声压 (Pa), 点: 9           总声压 (Pa), 点: 10          总声压 (Pa), 点: 11          总声压 (Pa), 点: 12          总声压 (Pa), 点: 13          总声压 (Pa), 点: 16          总声压 (Pa), 点: 53          总声压 (Pa), 点: 56          总声"
+        ],
+        "fmc_shape": [
+          16,
+          16,
+          751
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本"
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前DAS真值验证清单。"
+      },
+      "evidence_level": "仿真真值案例",
+      "use_boundary": "仅用于算法验证和相似性解释，不作为真实工件的缺陷类型、风险或验收阈值。"
+    },
+    {
+      "case_id": "comsol_pore_007",
+      "dataset_name": "d2mm(0.06,0.02)d1.6mm(0.055,0.022)d1.2mm(0.054,0.016)d1.6mm(0.045,0.027)d1.6mm(0.04,0.017)d0.8mm(0.037,0.025)",
+      "defect_family": "pore",
+      "truth_geometry": {
+        "segments_mm": [],
+        "lengths_mm": [],
+        "orientations_deg": [],
+        "centers_mm": [
+          [
+            60.0,
+            20.0
+          ],
+          [
+            55.0,
+            22.0
+          ],
+          [
+            54.0,
+            16.0
+          ],
+          [
+            45.0,
+            27.0
+          ],
+          [
+            40.0,
+            17.0
+          ],
+          [
+            37.0,
+            25.0
+          ]
+        ],
+        "diameters_mm": [
+          2.0,
+          1.6,
+          1.2,
+          1.6,
+          1.6,
+          0.8
+        ]
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 16,
+        "sample_count": 751,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL文本导出：位置、时间、接收通道幅值",
+        "header_excerpt": [
+          "Model:              PAUT_16（9）.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 15 2026, 18:04",
+          "Table:              表格 1 - 点计算 1",
+          "tx_pos (m)             Time (s)                 总声压 (Pa), 点: 7           总声压 (Pa), 点: 8           总声压 (Pa), 点: 9           总声压 (Pa), 点: 10          总声压 (Pa), 点: 11          总声压 (Pa), 点: 12          总声压 (Pa), 点: 13          总声压 (Pa), 点: 16          总声压 (Pa), 点: 53          总声压 (Pa), 点: 56          总声"
+        ],
+        "fmc_shape": [
+          16,
+          16,
+          751
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本"
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前DAS真值验证清单。"
+      },
+      "evidence_level": "仿真真值案例",
+      "use_boundary": "仅用于算法验证和相似性解释，不作为真实工件的缺陷类型、风险或验收阈值。"
+    },
+    {
+      "case_id": "comsol_lof_001",
+      "dataset_name": "未熔合仿真/bevel_10mm",
+      "defect_family": "lack_of_fusion",
+      "defect_subtype": "bevel",
+      "truth_geometry": {
+        "label": "坡口未熔合",
+        "centers_mm": [
+          [
+            50.0,
+            20.0
+          ]
+        ],
+        "lengths_mm": [
+          10.0
+        ],
+        "widths_mm": [
+          0.8
+        ],
+        "orientations_deg": [
+          5.0
+        ],
+        "model_geometry": "厚0.8 mm的长圆形空腔，圆角端部，声硬边界"
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 256,
+        "sample_count": 601,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL分通道文本：时间、单通道幅值",
+        "header_excerpt": [],
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本",
+        "velocity_mps": 6200.0,
+        "plate_thickness_mm": 40.0,
+        "excitation": "3 MHz，3周期Hanning正弦脉冲"
+      },
+      "validation": {
+        "status": "dataset_report_available",
+        "boundary": "团队数据集报告给出DAS定位、尺寸和SNR验证；仍不代表真实工件验收结论。"
+      },
+      "evidence_level": "仿真真值及数据集验证案例",
+      "use_boundary": "未熔合类别、位置和尺寸来自仿真说明，只用于算法验证与相似性解释。"
+    },
+    {
+      "case_id": "comsol_lof_009",
+      "dataset_name": "未熔合仿真/root_10mm",
+      "defect_family": "lack_of_fusion",
+      "defect_subtype": "root",
+      "truth_geometry": {
+        "label": "根部未熔合",
+        "centers_mm": [
+          [
+            50.0,
+            32.0
+          ]
+        ],
+        "lengths_mm": [
+          10.0
+        ],
+        "widths_mm": [
+          0.8
+        ],
+        "orientations_deg": [
+          0.0
+        ],
+        "model_geometry": "厚0.8 mm的长圆形空腔，圆角端部，声硬边界"
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 256,
+        "sample_count": 601,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL分通道文本：时间、单通道幅值",
+        "header_excerpt": [],
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本",
+        "velocity_mps": 6200.0,
+        "plate_thickness_mm": 40.0,
+        "excitation": "3 MHz，3周期Hanning正弦脉冲"
+      },
+      "validation": {
+        "status": "dataset_report_available",
+        "boundary": "团队数据集报告给出DAS定位、尺寸和SNR验证；仍不代表真实工件验收结论。"
+      },
+      "evidence_level": "仿真真值及数据集验证案例",
+      "use_boundary": "未熔合类别、位置和尺寸来自仿真说明，只用于算法验证与相似性解释。"
+    },
+    {
+      "case_id": "comsol_lof_005",
+      "dataset_name": "未熔合仿真/interlayer_10mm",
+      "defect_family": "lack_of_fusion",
+      "defect_subtype": "interlayer",
+      "truth_geometry": {
+        "label": "层间未熔合",
+        "centers_mm": [
+          [
+            50.0,
+            15.0
+          ]
+        ],
+        "lengths_mm": [
+          10.0
+        ],
+        "widths_mm": [
+          0.8
+        ],
+        "orientations_deg": [
+          0.0
+        ],
+        "model_geometry": "厚0.8 mm的长圆形空腔，圆角端部，声硬边界"
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 256,
+        "sample_count": 601,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL分通道文本：时间、单通道幅值",
+        "header_excerpt": [],
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本",
+        "velocity_mps": 6200.0,
+        "plate_thickness_mm": 40.0,
+        "excitation": "3 MHz，3周期Hanning正弦脉冲"
+      },
+      "validation": {
+        "status": "dataset_report_available",
+        "boundary": "团队数据集报告给出DAS定位、尺寸和SNR验证；仍不代表真实工件验收结论。"
+      },
+      "evidence_level": "仿真真值及数据集验证案例",
+      "use_boundary": "未熔合类别、位置和尺寸来自仿真说明，只用于算法验证与相似性解释。"
+    },
+    {
+      "case_id": "comsol_lof_003",
+      "dataset_name": "未熔合仿真/bevel_20mm",
+      "defect_family": "lack_of_fusion",
+      "defect_subtype": "bevel",
+      "truth_geometry": {
+        "label": "坡口未熔合",
+        "centers_mm": [
+          [
+            50.0,
+            20.0
+          ]
+        ],
+        "lengths_mm": [
+          20.0
+        ],
+        "widths_mm": [
+          0.8
+        ],
+        "orientations_deg": [
+          5.0
+        ],
+        "model_geometry": "厚0.8 mm的长圆形空腔，圆角端部，声硬边界"
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "channel_file_count": 256,
+        "sample_count": 601,
+        "receiver_count": 16,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "format": "COMSOL分通道文本：时间、单通道幅值",
+        "header_excerpt": [],
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "source_kind": "COMSOL仿真A扫/FMC文本",
+        "velocity_mps": 6200.0,
+        "plate_thickness_mm": 40.0,
+        "excitation": "3 MHz，3周期Hanning正弦脉冲"
+      },
+      "validation": {
+        "status": "dataset_report_available",
+        "boundary": "团队数据集报告给出DAS定位、尺寸和SNR验证；仍不代表真实工件验收结论。"
+      },
+      "evidence_level": "仿真真值及数据集验证案例",
+      "use_boundary": "未熔合类别、位置和尺寸来自仿真说明，只用于算法验证与相似性解释。"
+    },
+    {
+      "case_id": "comsol_slag_001",
+      "dataset_name": "夹渣/1",
+      "defect_family": "inclusion",
+      "defect_subtype": "slag_inclusion",
+      "truth_geometry": {
+        "label": "夹渣仿真体",
+        "case_label": "S01",
+        "centers_mm": [
+          [
+            45.0,
+            2.5
+          ]
+        ],
+        "lengths_mm": [
+          1.2
+        ],
+        "widths_mm": [
+          0.4
+        ],
+        "orientations_deg": [
+          15.0
+        ]
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "receiver_count": 16,
+        "channel_count": 256,
+        "sample_count": 601,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "format": "COMSOL单文件完整FMC：时间、256个Tx-Rx通道幅值",
+        "source_kind": "COMSOL仿真A扫/FMC文本",
+        "header_excerpt": [
+          "Model:              PAUT_4.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 16 2026, 16:00",
+          "Table:              FMC_S01_16x16_L=1.2mm_T=0.4mm_x=45.0mm_depth=2.5mm_angle=15.0deg -"
+        ]
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前统一DAS真值验证。"
+      },
+      "evidence_level": "仿真文件头真值案例",
+      "use_boundary": "夹渣几何来自COMSOL表头，只用于算法验证与相似性解释。"
+    },
+    {
+      "case_id": "comsol_slag_008",
+      "dataset_name": "夹渣/8",
+      "defect_family": "inclusion",
+      "defect_subtype": "slag_inclusion",
+      "truth_geometry": {
+        "label": "夹渣仿真体",
+        "case_label": "S08",
+        "centers_mm": [
+          [
+            40.0,
+            12.0
+          ]
+        ],
+        "lengths_mm": [
+          3.2
+        ],
+        "widths_mm": [
+          0.7
+        ],
+        "orientations_deg": [
+          69.0
+        ]
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "receiver_count": 16,
+        "channel_count": 256,
+        "sample_count": 601,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "format": "COMSOL单文件完整FMC：时间、256个Tx-Rx通道幅值",
+        "source_kind": "COMSOL仿真A扫/FMC文本",
+        "header_excerpt": [
+          "Model:              PAUT_4.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 16 2026, 16:00",
+          "Table:              FMC_S08_16x16_L=3.2mm_T=0.7mm_x=40.0mm_depth=12.0mm_angle=69.0deg -"
+        ]
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前统一DAS真值验证。"
+      },
+      "evidence_level": "仿真文件头真值案例",
+      "use_boundary": "夹渣几何来自COMSOL表头，只用于算法验证与相似性解释。"
+    },
+    {
+      "case_id": "comsol_slag_015",
+      "dataset_name": "夹渣/15",
+      "defect_family": "inclusion",
+      "defect_subtype": "slag_inclusion",
+      "truth_geometry": {
+        "label": "夹渣仿真体",
+        "case_label": "S15",
+        "centers_mm": [
+          [
+            50.0,
+            22.0
+          ]
+        ],
+        "lengths_mm": [
+          5.0
+        ],
+        "widths_mm": [
+          0.8
+        ],
+        "orientations_deg": [
+          10.0
+        ]
+      },
+      "acquisition": {
+        "tx_file_count": 16,
+        "receiver_count": 16,
+        "channel_count": 256,
+        "sample_count": 601,
+        "sample_interval_s": 2e-08,
+        "sample_rate_hz": 50000000.0,
+        "fmc_shape": [
+          16,
+          16,
+          601
+        ],
+        "format": "COMSOL单文件完整FMC：时间、256个Tx-Rx通道幅值",
+        "source_kind": "COMSOL仿真A扫/FMC文本",
+        "header_excerpt": [
+          "Model:              PAUT_4.mph",
+          "Version:            COMSOL 6.4.0.293",
+          "Date:               Aug 16 2026, 16:01",
+          "Table:              FMC_S15_16x16_L=5.0mm_T=0.8mm_x=50.0mm_depth=22.0mm_angle=10.0deg -"
+        ]
+      },
+      "validation": {
+        "status": "not_run",
+        "boundary": "尚未进入当前统一DAS真值验证。"
+      },
+      "evidence_level": "仿真文件头真值案例",
+      "use_boundary": "夹渣几何来自COMSOL表头，只用于算法验证与相似性解释。"
+    }
+  ]
+}

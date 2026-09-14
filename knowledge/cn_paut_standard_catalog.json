@@ -1,0 +1,117 @@
+{
+  "catalog_version": "2026-08-12",
+  "verification_source": "全国标准信息公共服务平台",
+  "notice": "仅保存公开可核验的标准身份、状态、范围摘要和软件使用边界，不包含受版权保护的标准正文和验收数值表。",
+  "standards": [
+    {
+      "code": "GB/T 40733-2021",
+      "name": "焊缝无损检测 超声检测 自动相控阵超声技术的应用",
+      "status": "现行",
+      "role": "自动PAUT方法",
+      "applies_to": ["焊缝", "自动PAUT", "半自动PAUT"],
+      "scope": "自动相控阵超声技术在焊缝检测中的应用。",
+      "required_context": ["材料", "焊缝类型", "板厚", "检测等级", "设备与探头", "聚焦法则", "灵敏度校准", "扫查覆盖", "编码器记录"],
+      "agent_rule": "焊缝自动或半自动PAUT优先作为方法候选；缺少工艺与校准信息时只能判断为条件不足。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=CE1E6A1DD59058F6E05397BE0A0A68DF"
+    },
+    {
+      "code": "GB/T 40734-2021",
+      "name": "焊缝无损检测 相控阵超声检测 验收等级",
+      "status": "现行",
+      "role": "PAUT验收",
+      "applies_to": ["焊缝", "PAUT", "铁素体钢", "全熔透焊缝", "厚度不小于6mm"],
+      "scope": "公开范围信息指向厚度不小于6 mm的铁素体钢全熔透焊缝PAUT验收等级。",
+      "required_context": ["材料为铁素体钢", "全熔透焊缝", "板厚不小于6mm", "适用验收等级", "指示长度或高度", "幅度与灵敏度基准", "人工评定"],
+      "agent_rule": "只有对象范围与评定输入齐全时才能进入验收等级对照；系统不得自行补造等级或阈值。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=CE1E6A1DD59258F6E05397BE0A0A68DF"
+    },
+    {
+      "code": "GB/T 43320-2023",
+      "name": "焊缝无损检测 超声检测 薄壁钢构件自动相控阵技术的应用",
+      "status": "现行",
+      "role": "薄壁自动PAUT方法",
+      "applies_to": ["焊缝", "自动PAUT", "薄壁钢构件", "3.2mm至8.0mm", "全熔透焊缝"],
+      "scope": "板厚3.2 mm至8.0 mm钢构件全熔透焊接接头的半自动或全自动PAUT应用。",
+      "required_context": ["板厚3.2mm至8.0mm", "低碳钢或细晶粒钢", "全熔透焊缝", "检测等级", "灵敏度设置", "扫查覆盖"],
+      "agent_rule": "薄壁范围优先于一般自动PAUT方法；超出范围时不得声称直接适用。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=B32EAB049638CE60E05397BE0A0AF23E"
+    },
+    {
+      "code": "GB/T 44051-2024",
+      "name": "焊缝无损检测 薄壁钢构件相控阵超声检测 验收等级",
+      "status": "现行",
+      "role": "薄壁PAUT验收",
+      "applies_to": ["焊缝", "PAUT", "薄壁钢构件", "3.2mm至8.0mm"],
+      "scope": "低合金钢和/或铁素体钢薄壁全熔透焊接接头PAUT验收等级。",
+      "required_context": ["板厚3.2mm至8.0mm", "材料", "全熔透焊缝", "灵敏度等级", "指示分类与尺寸", "双侧或单侧检测条件"],
+      "agent_rule": "薄壁PAUT验收候选；缺少材料、接头或灵敏度信息时仅列为待确认依据。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=19B8508AEDA94286E06397BE0A0A616D"
+    },
+    {
+      "code": "GB/T 32563-2016",
+      "name": "无损检测 超声检测 相控阵超声检测方法",
+      "status": "现行（2021年复审继续有效）",
+      "role": "通用PAUT方法",
+      "applies_to": ["PAUT", "手工", "半自动", "自动"],
+      "scope": "相控阵超声检测通用方法，用于方法与工艺信息完整性检查。",
+      "required_context": ["探头与阵元", "楔块", "声速", "聚焦法则", "扫查方式", "校准", "定位与定尺寸方法"],
+      "agent_rule": "可作通用方法支撑，但不能替代产品专用方法与验收标准。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=71F772D812A1D3A7E05397BE0A0AB82A"
+    },
+    {
+      "code": "NB/T 47013.15-2021",
+      "name": "承压设备无损检测 第15部分：相控阵超声检测",
+      "status": "现行",
+      "role": "承压设备PAUT方法与分级",
+      "applies_to": ["承压设备", "锅炉", "压力容器", "压力管道", "PAUT"],
+      "scope": "承压设备相控阵超声检测。",
+      "required_context": ["承压设备类别", "产品技术条件", "材料与厚度", "检测时机与比例", "工艺规程", "试块与校准", "质量分级条件"],
+      "agent_rule": "只有明确属于承压设备时才列为直接候选，普通焊缝项目不得默认套用。",
+      "url": "https://std.samr.gov.cn/hb/search/stdHBDetailed?id=DE3F55269F551905E05397BE0A0AFD81"
+    },
+    {
+      "code": "GB/T 41114-2021",
+      "name": "无损检测 超声检测 相控阵超声检测标准试块规范",
+      "status": "现行",
+      "role": "PAUT校准支撑",
+      "applies_to": ["PAUT", "标准试块", "校准"],
+      "scope": "用于相控阵检测设备调节的标准试块规范。",
+      "required_context": ["试块标识", "材质", "尺寸", "校准时间", "校准结果"],
+      "agent_rule": "用于检查校准证据是否齐全，不单独提供缺陷验收结论。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=D4BEFFF4EA11B241E05397BE0A0AF581"
+    },
+    {
+      "code": "GB/T 42399.1-2023/GB/T 42399.2-2023/GB/T 42399.3-2023",
+      "name": "无损检测仪器 相控阵超声设备的性能与检验",
+      "status": "现行",
+      "role": "设备性能支撑",
+      "applies_to": ["PAUT仪器", "探头", "组合系统", "性能核查"],
+      "scope": "分别涉及仪器、探头和组合系统的性能与检验。",
+      "required_context": ["设备型号", "探头型号", "性能核查记录", "组合系统配置", "核查日期"],
+      "agent_rule": "用于提示设备性能证据，不作为焊缝验收等级依据。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=F789206610F8B223E05397BE0A0AE533"
+    },
+    {
+      "code": "GB/T 11345-2023",
+      "name": "焊缝无损检测 超声检测 技术、检测等级和评定",
+      "status": "现行",
+      "role": "常规手工UT方法",
+      "applies_to": ["焊缝", "手工超声", "铁素体钢", "厚度不小于8mm"],
+      "scope": "公开范围主要为母材厚度不小于8 mm的低衰减金属材料全熔透焊缝手工超声检测。",
+      "required_context": ["手工UT工艺", "材料", "板厚", "温度", "检测等级"],
+      "agent_rule": "自动PAUT任务中只能作为相关常规UT参考，不能替代GB/T 40733等自动PAUT方法标准。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailedCNF?id=0B4529DE1075FCAFE06397BE0A0A46CC"
+    },
+    {
+      "code": "GB/T 12604.1-2020",
+      "name": "无损检测 术语 超声检测",
+      "status": "现行",
+      "role": "术语基础",
+      "applies_to": ["超声检测术语"],
+      "scope": "超声检测通用术语基础。",
+      "required_context": [],
+      "agent_rule": "用于规范报告术语，不提供方法或验收判定。",
+      "url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=B4C25880C4011CB3E05397BE0A0A92D0"
+    }
+  ]
+}

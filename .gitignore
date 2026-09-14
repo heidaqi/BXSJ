@@ -1,0 +1,65 @@
+# Secrets and machine-local settings
+.env
+.env.*
+!.env.example
+config/
+credentials*
+secrets.*
+*.pem
+*.key
+
+# User data and generated inspection artifacts
+data/
+outputs/
+output/
+uploads/
+logs/
+reports/
+test_output/
+validation/
+*.db
+*.db-*
+*.sqlite*
+*.log
+*.pdf
+
+# Build and packaged deliverables
+build/
+dist/
+packaging/runtime_build/
+installer_cache/
+runtime/
+*.exe
+*.bin
+*.zip
+*.7z
+*.rar
+
+# Python and tool environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.matplotlib_config/
+.yolo_config/
+
+# Frontend dependencies and generated assets
+node_modules/
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+
+# Training runs and raw simulation projects
+runs/
+weights/
+*.mph
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
