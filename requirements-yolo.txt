@@ -1,4 +1,0 @@
-# 真实 YOLO 推理依赖。训练好模型并准备接入 best.pt 时再安装。
-# 建议使用 Python 3.10-3.12。
-ultralytics==8.3.56
-opencv-python==4.10.0.84

@@ -53,9 +53,9 @@ if ($LASTEXITCODE -ne 0) {
     throw "Failed to install backend requirements."
 }
 
-& ".\.venv\Scripts\python.exe" -m pip install -r requirements-yolo.txt -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
+& ".\.venv\Scripts\python.exe" -m pip install -r requirements-image-compat.txt -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn
 if ($LASTEXITCODE -ne 0) {
-    throw "Failed to install YOLO requirements."
+    throw "Failed to install image compatibility requirements."
 }
 
 Write-Host "Backend environment is ready."
